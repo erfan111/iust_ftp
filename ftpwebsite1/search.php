@@ -46,7 +46,8 @@ $search_string = $tutorial_db->real_escape_string($search_string);
 // Check Length More Than One Character
 if (strlen($search_string) >= 1 && $search_string !== ' ') {
 	// Build Query
-	$query = 'SELECT * FROM ftpt WHERE name LIKE "%'.$search_string.'%"' ;
+	$query = '(SELECT * FROM ftpt WHERE name LIKE "%'.$search_string.'%")' ;
+
 	// Do Search
 	$result = $tutorial_db->query($query);
 	while($results = $result->fetch_array()) {
@@ -58,9 +59,9 @@ if (strlen($search_string) >= 1 && $search_string !== ' ') {
 		foreach ($result_array as $result) {
 
 			// Format Output Strings And Hightlight Matches
-			$display_function = preg_replace("/".$search_string."/i", "<b class='highlight'>".$search_string."</b>", $result['function']);
+			$display_function = preg_replace("/".$search_string."/i", "<b class='highlight'>".$search_string."</b>", $result['desc']);
 			$display_name = preg_replace("/".$search_string."/i", "<b class='highlight'>".$search_string."</b>", $result['name']);
-			$display_url = $result[address];
+			$display_url = $result['address'];
 
 			// Insert Name
 			$output = str_replace('nameString', $display_name, $html);
@@ -78,7 +79,7 @@ if (strlen($search_string) >= 1 && $search_string !== ' ') {
 
 		// Format No Results Output
 		$output = str_replace('urlString', 'javascript:void(0);', $html);
-		$output = str_replace('nameString', '<b>No Results Found.</b>', $output);
+		$output = str_replace('nameString', '<b>نتیجه ای پیدا نشد.</b>', $output);
 		$output = str_replace('functionString', 'Sorry :(', $output);
 
 		// Output

@@ -56,8 +56,8 @@
             <?php
                 $dbhost = "localhost";
                 $dbname = "iustftpdb";
-                $dbuser = "root";
-                $dbpass = "";
+                $dbuser = "erfan";
+                $dbpass = "ryangiggs";
 
                 //  Connection
                 global $mv;

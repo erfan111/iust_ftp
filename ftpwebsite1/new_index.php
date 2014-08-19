@@ -175,7 +175,7 @@
     <div class="datagrid"><table>
 
             <tfoot><tr><td colspan="5"><div id="no-paging">&nbsp;</div></tr></tfoot>
-            <tbody><tr><td class="tbl"><a href="group.php?phpcat=1">test</a></td><td>data</td><td>data</td><td>data</td><td>data</td></tr>
+            <tbody><tr><td class="tbl"><a href="group.php?cat=0">test</a></td><td>data</td><td>data</td><td>data</td><td>data</td></tr>
             <tr class="alt"><td>data</td><td>data</td><td>data</td><td>data</td><td>data</td></tr>
             <tr><td>data</td><td>data</td><td>data</td><td>data</td><td>data</td></tr>
             <tr class="alt"><td>data</td><td>data</td><td>data</td><td>data</td><td>data</td></tr>
