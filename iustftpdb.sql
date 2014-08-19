@@ -25,16 +25,26 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `ftpt`
 --
-
 CREATE TABLE IF NOT EXISTS `ftpt` (
-  `id` int(11) NOT NULL,
-  `name` varchar(90) NOT NULL,
-  `desc` text,
-  `address` text NOT NULL,
-  `img` text,
-  `dltimes` int(11) DEFAULT '0',
-  PRIMARY KEY (`id`)
+`id` int(11) NOT NULL,
+`name` varchar(90) NOT NULL,
+`desc` text,
+`cat` int(11) NOT NULL,
+`address` text NOT NULL,
+`img` text,
+`dltimes` int(11) DEFAULT '0',
+PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+CREATE TABLE IF NOT EXISTS `catt` (
+`id` int(11) NOT NULL,
+`name` varchar(90) NOT NULL,
+`desc` text,
+PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 --
 -- Dumping data for table `ftpt`
@@ -43,6 +53,12 @@ CREATE TABLE IF NOT EXISTS `ftpt` (
 INSERT INTO `ftpt` (`id`, `name`, `desc`, `address`, `img`, `dltimes`) VALUES
 (0, 'ms office 2013', 'office13', 'www.ed.wefcwefc', 'images/portfolio/girl.jpg', 1),
 (1, 'idm', 'internet download manager 5.19', 'ftp.iust.ac.ir/p/r/fhf/hgf/s/idm', 'images/portfolio/coffee.jpg', 3);
+
+
+
+INSERT INTO `catt` (`id`, `name`, `desc`) VALUES
+(1, 'Office', 'office13 is popular group of software that are for editing and ...!'),
+(2, 'Internet', 'Some of internet softwares');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

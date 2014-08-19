@@ -53,42 +53,60 @@
     <div class="row">
 
         <div class="twelve columns collapsed">
-
-            <h1>گروه</h1>
-
-            <!-- portfolio-wrapper -->
-            <div id="portfolio-wrapper" class="bgrid-quarters s-bgrid-thirds cf">
-                <!------------------------------------------------------------------>
-                <?php
+            <?php
                 $dbhost = "localhost";
                 $dbname = "iustftpdb";
-                $dbuser = "erfan";
-                $dbpass = "ryangiggs";
+                $dbuser = "root";
+                $dbpass = "";
 
-                //	Connection
+                //  Connection
                 global $mv;
 
                 $mv = new mysqli();
                 $mv->connect($dbhost, $dbuser, $dbpass, $dbname);
                 $mv->set_charset("utf8");
-                //	Check Connection
+                //  Check Connection
                 if ($mv->connect_errno) {
                     printf("Connect failed: %s\n", $mv->connect_error);
                     exit();
                 }
-                $query = "SELECT * FROM ftpt WHERE cat =".$_get['phpcat'] ;
-                // Do Search
-                $result1 = $mv->query($query);
+                
+                //use catId instead of GET one.
+                $catId=$_GET['cat'];
+                
+                //scape sql injection
+                $catId = $mv->real_escape_string($catId);
+                
+                //select the category
+                $query = "SELECT * FROM catt WHERE id =".$catId ;
+                $result = $mv->query($query);
+                //Optimize this if block!!!###
+                if (!$result) {
+                    //echo "There is no cat with this id!!!";
+                    echo 'Could not run query: ' . mysql_error();
+                    exit;
+                }
+                $cat = $result->fetch_row();
+                echo "
+                    <!-- portfolio-wrapper -->
+                    <div id='portfolio-wrapper' class='bgrid-quarters s-bgrid-thirds cf'> 
+                    <!------------------------------------------------------------------>
+                    ";
+                
+                //Show the softwares
+                //optimize this query to for asscending to download times ###
+                $query = "SELECT * FROM ftpt WHERE cat =".$_GET['cat'] ;
+                $qResult = $mv->query($query);
 
-                while($results = $result1->fetch_array()) {
+                while($results = $qResult->fetch_array()) {
                     global $result_array;
                     $result_array[] = $results;
                 }
 
-                // Check If We Have Results
+                // Check if we have any software then show them
                 if (isset($result_array)) {
                     $num = 0;
-                    foreach ($result_array as $GLOBALS[result]) {
+                    foreach ($result_array as $GLOBALS['result']) {
                         $num++;
                         echo("<div class='columns portfolio-item'>");
                         echo('<div class="item-wrap">');
