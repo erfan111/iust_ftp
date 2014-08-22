@@ -1,0 +1,179 @@
+.the_form {
+    width: 60%;
+    float: left;
+}
+.the_info {
+    width: 40%;
+    float: right;
+    height: 100%;
+    position: relative;
+}
+
+.small {
+    width: 50%;
+    height: 50%;
+}
+html, body, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin-right: 30px;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    background: #202020;
+    direction: ltr;
+    color: beige;
+}
+p {
+    color: beige;
+    direction: rtl;
+    text-align: center;
+}
+/*  6. Buttons  --------------------------------------------------------- */
+
+.button,
+.button:visited,
+button,
+input[type="submit"],
+input[type="file"],
+input[type="button"],
+.bt
+    {
+    font: 16px/30px 'opensans-bold', sans-serif;
+    background-color: #11ABB0;
+    display: inline-block;
+    text-decoration: none;
+    letter-spacing: 0;
+    color: #fff;
+    padding: 12px 20px;
+    margin-bottom: 18px;
+    border: none;
+    cursor: pointer;
+    height: auto;
+
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px;
+}
+
+.button:hover,
+button:hover,
+.bt:hover,
+input[type="submit"]:hover,
+input[type="file"]:hover,
+input[type="button"]:hover {
+    background: #3d4145;
+    color: #fff;
+}
+
+.button:active,
+button:active,
+input[type="submit"]:active,
+input[type="file"]:active,
+input[type="button"]:active {
+    background: #3d4145;
+    color: #fff;
+}
+
+.button.full-width,
+button.full-width,
+input[type="submit"].full-width,
+input[type="file"].full-width,
+input[type="button"].full-width {
+    width: 100%;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    text-align: center;
+}
+
+/* Fix for odd Mozilla border & padding issues */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+
+/*  7. Forms  --------------------------------------------------------- */
+
+form { margin-bottom: 24px;
+    margin-left: 24px ;
+    ;
+}
+fieldset { margin-bottom: 24px; }
+
+input[type="text"],
+input[type="url"],
+input[type="password"],
+input[type="email"],
+textarea,
+select {
+    display: block;
+    padding: 18px 15px;
+    margin: 0 0 24px 0;
+    border: 0;
+    outline: none;
+    vertical-align: middle;
+    min-width: 225px;
+    max-width: 100%;
+    font-size: 15px;
+    line-height: 24px;
+    color: #394646;
+    background: #D3D9D9;
+
+}
+
+/* select { padding: 0;
+   width: 220px;
+   } */
+
+input[type="text"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+select:focus,
+textarea:focus {
+    color: #e1e5ea;
+    background-color: #11abb0;
+}
+
+textarea { min-height: 180px; }
+
+label,
+legend {
+    font: 16px/24px 'opensans-bold', sans-serif;
+    margin: 12px 0;
+    color: #d3dae0;
+    display: block;
+    float: left;
+    width: 20%;
+}
+label span,
+legend span {
+    color: #8B9798;
+    font: 14px/24px 'opensans-regular', sans-serif;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    font-size: 15px;
+    color: #737373;
+}
+
+input[type="checkbox"] { display: inline; }

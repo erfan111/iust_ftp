@@ -121,7 +121,7 @@
                 $mv = new mysqli();
                 $mv->connect($dbhost, $dbuser, $dbpass, $dbname);
                 $mv->set_charset("utf8");
-                $result_array ;
+
                 //	Check Connection
                 if ($mv->connect_errno) {
                     printf("Connect failed: %s\n", $mv->connect_error);
@@ -139,16 +139,16 @@
                 // Check If We Have Results
                 if (isset($result_array)) {
                     $num = 0;
-                    foreach ($result_array as $GLOBALS[result]) {
+                    foreach ($result_array as $GLOBALS['result']) {
                         $num++;
                         echo("<div class='columns portfolio-item'>");
                         echo('<div class="item-wrap">');
                         $format = '<a href="#modal-0'.$num.'">';
                         echo($format);
-                        $format =  '<img alt="" src="'.$result[img].'">'.'<div class="overlay">'.'<div class="portfolio-item-meta">';
+                        $format =  '<img alt="" src="'.$result['img'].'">'.'<div class="overlay">'.'<div class="portfolio-item-meta">';
                         echo($format);
-                        echo('<h5>'.$result[name].'</h5>');
-                        echo('<p>' . $result[desc].'</p>');
+                        echo('<h5>'.$result['name'].'</h5>');
+                        echo('<p>' . $result['desc'].'</p>');
                         echo('</div>');
                         echo('</div>');
                         echo('<div class="link-icon"><i class="icon-plus"></i></div>');
@@ -192,11 +192,11 @@
         foreach ($result_array as $result) {
             $num++;
             echo('<div id="modal-0'.$num.'" class="popup-modal mfp-hide"');
-                $format =  '<img class="scale-with-grid" src="'.$result[img].'">'.'<div class="description-box">'.'<h4>'.$result[name].'</h4>'.'<p>'.$result[desc].'</p>';
+                $format =  '<img class="scale-with-grid" src="'.$result['img'].'">'.'<div class="description-box">'.'<h4>'.$result['name'].'</h4>'.'<p>'.$result['desc'].'</p>';
                 echo($format);
                 echo('</div>');
                 echo('<div class="link-box">');
-                echo('<a href="'.$result[address].'">دانلود</a>');
+                echo('<a href="'.$result['address'].'">دانلود</a>');
                 echo('<a class="popup-modal-dismiss">بستن</a>');
                 echo('</div>');
                 echo('</div>');
@@ -205,7 +205,7 @@
 }
 ?>
 
-</div> <!-- row End -->
+
 
 </section> <!-- Portfolio Section End-->
 
@@ -232,7 +232,7 @@
                         <li>
                             <blockquote>
                                 <p dir="rtl">
-                                    این سایت به منظور تسهیل دسترسی به هزاران برنامه موجود در ftp دانشگاه توسط دفتر فرهنگی دانشکده کامپیوتر ایجاد شده است. </br> برنامه های موجود در ftp به تازگی بروز رسانی شده اند و درخواست های شما برای اضافه کردن برنامه های مورد نیازتان در اسرع وقت در آن قرار  خواهد گرفت.                           </p>
+                                    این سایت به منظور تسهیل دسترسی به هزاران برنامه موجود در ftp دانشگاه توسط دفتر فرهنگی دانشکده کامپیوتر ایجاد شده است. <br> برنامه های موجود در ftp به تازگی بروز رسانی شده اند و درخواست های شما برای اضافه کردن برنامه های مورد نیازتان در اسرع وقت در آن قرار  خواهد گرفت.                           </p>
 
                             </blockquote>
                         </li> <!-- slide ends -->
@@ -368,7 +368,7 @@
             </ul>
 
             <ul class="copyright">
-                <li dir="rtl">طراحی و اجرا </br><a title="Styleshout" href="http://www.styleshout.com/">Styleshout</a> ||&nbsp;<a>دفتر فرهنگی دانشکده کامپیوتر</a></li>
+                <li dir="rtl">طراحی و اجرا <br><a title="Styleshout" href="http://www.styleshout.com/">Styleshout</a> ||&nbsp;<a href="admin_login.php">دفتر فرهنگی دانشکده کامپیوتر</a></li>
             </ul>
 
         </div>
