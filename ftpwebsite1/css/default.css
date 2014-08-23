@@ -139,7 +139,6 @@ table {
 html {
    font-size: 62.5%;
    -webkit-font-smoothing: antialiased;
-   direction: rtl;
 }
 
 body {
@@ -472,6 +471,7 @@ input[type="button"] {
    color: #fff;
 	padding: 12px 20px;
 	margin-bottom: 18px;
+    padding-left: 20px;
    border: none;
    cursor: pointer;
    height: auto;

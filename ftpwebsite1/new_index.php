@@ -75,7 +75,7 @@
         <div id="main">
 
             <!-- Main Title -->
-            <div class="icon"></div>
+
 
             <h3>برنامه مورد نظرتان را جست و جو کنید:</h3>
             <!-- Main Input -->
@@ -103,8 +103,6 @@
     <div class="row">
 
         <div class="twelve columns collapsed">
-
-            <h1>برنامه های پیشنهادی</h1>
 
             <!-- portfolio-wrapper -->
             <div id="portfolio-wrapper" class="bgrid-quarters s-bgrid-thirds cf">
@@ -191,12 +189,12 @@
         $num = 0;
         foreach ($result_array as $result) {
             $num++;
-            echo('<div id="modal-0'.$num.'" class="popup-modal mfp-hide"');
+            echo('<div id="modal-0'.$num.'" class="popup-modal mfp-hide"'.'<br>');
                 $format =  '<img class="scale-with-grid" src="'.$result['img'].'">'.'<div class="description-box">'.'<h4>'.$result['name'].'</h4>'.'<p>'.$result['desc'].'</p>';
                 echo($format);
                 echo('</div>');
                 echo('<div class="link-box">');
-                echo('<a href="'.$result['address'].'">دانلود</a>');
+                echo('<a class="dl" href="'.$result['address'].'">دانلود</a>');
                 echo('<a class="popup-modal-dismiss">بستن</a>');
                 echo('</div>');
                 echo('</div>');
@@ -217,11 +215,7 @@
 
         <div class="row">
 
-            <div class="two columns header-col">
 
-                <h1><span>Client Testimonials</span></h1>
-
-            </div>
 
             <div class="ten columns flex-container">
 
@@ -263,11 +257,6 @@
 
     <div class="row section-head">
 
-        <div class="two columns header-col">
-
-            <h1><span>Get In Touch.</span></h1>
-
-        </div>
 
         <div class="ten columns">
 
@@ -307,7 +296,7 @@
                     </div>
 
                     <div>
-                        <button class="submit">ارسال</button>
+                        <button >ارسال</button>
                      <span id="image-loader">
                         <img alt="" src="images/loader.gif">
                      </span>
@@ -320,7 +309,7 @@
             <div id="message-warning">خطا!</div>
             <!-- contact-success -->
             <div id="message-success">
-                <i class="fa fa-check"></i>با تشکر.ویغام شما ارسال شد.<br>
+                <i class="fa fa-check"></i>با تشکر.پیغام شما ارسال شد.<br>
             </div>
 
         </div>

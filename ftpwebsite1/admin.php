@@ -89,8 +89,6 @@ if (isset($_SESSION['admin_user'])) {
                         $desc = "";
                         $file = "";
                         $category = "";
-
-                        mysql_close($dbc);
                     }
                     else {
                         echo '<p class="error">Sorry, there was a problem uploading your image.</p>';

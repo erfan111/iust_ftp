@@ -1,4 +1,61 @@
-.datagrid table { border-collapse: collapse; text-align: left; width: 100%; } .datagrid {font: normal 12px/150% Arial, Helvetica, sans-serif; background: #fff; overflow: hidden; border: 5px solid #BA570B; -webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px; }.datagrid table td, .datagrid table th { padding: 11px 0px; }.datagrid table thead th {background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #BA570B), color-stop(1, #BA570B) );background:-moz-linear-gradient( center top, #BA570B 5%, #BA570B 100% );filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#BA570B', endColorstr='#BA570B');background-color:#BA570B; color:#BA570B; font-size: 10px; font-weight: normal; } .datagrid table thead th:first-child { border: none; }.datagrid table tbody td { color: #47424F; border-left: 6px solid #BA570B;font-size: 12px;border-bottom: 6px solid #BA570B;font-weight: normal; }.datagrid table tbody .alt td { background: #D6AC8B; color: #47424F; }.datagrid table tbody td:first-child { border-left: none; }.datagrid table tbody tr:last-child td { border-bottom: none; }.datagrid table tfoot td div { border-top: 1px solid #BA570B;background: #D6AC8B;} .datagrid table tfoot td { padding: 0; font-size: 10px } .datagrid table tfoot td div{ padding: 0px;  } .tbl {text-align: center}
+.datagrid table {
+    border-collapse: collapse;
+    text-align: left; width: 100%;
+
+}
+.datagrid {
+    font: normal 12px/150% Arial, Helvetica, sans-serif;
+    background: #fff;
+    overflow: hidden;
+    border: 5px solid #ebeeee;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+
+
+
+}
+.datagrid table td, .datagrid table th { padding: 11px 0;
+    text-align: center;
+}
+.datagrid table td a {
+    color: rgb(240, 96, 0);
+    font-weight: bold;
+}
+
+.datagrid table td a:hover {
+    color: rgb(32, 32, 32);
+}
+
+.datagrid table tbody td {
+    color: #47424F;
+    border-left: 6px solid #07748b;
+    font-size: 20px;
+    border-bottom: 6px solid #07748b;
+    border-top: 6px solid #07748b;
+    border-right: 6px solid #07748b;
+    font-weight: normal;
+
+}
+.datagrid table tbody .alt td {
+    background: #0788a0;
+    color: #e9e9e9;
+}
+
+.datagrid table tfoot td div {
+    border-top: 1px solid #07748b;
+    background: #ebeeee;
+}
+.datagrid table tfoot td {
+    padding: 0;
+    font-size: 10px
+}
+.datagrid table tfoot td div{
+    padding: 0px;
+}
+.tbl {
+    text-align: center
+}
 .admin_login {
     margin-top: 15pt;
     margin-right: 15pt;
