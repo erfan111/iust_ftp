@@ -645,7 +645,7 @@ call-to-action .button {
 /* ------------------------------------------------------------------ */
 
 #testimonials {
-   background: #1F1F1F url(../images/testimonials-bg.jpg) no-repeat center center;
+   background: #1F1F1F url(../images/g-background-backdrop.jpg) no-repeat center center;
    background-size: cover !important;
 	-webkit-background-size: cover !important;
    background-attachment: fixed;
@@ -677,7 +677,10 @@ call-to-action .button {
    float: left;
    color: #fff;
 }
+p.about {
+    direction: rtl;
 
+}
 /*	Blockquotes */
 #testimonials blockquote {
    margin: 0 0px 30px 0px;
