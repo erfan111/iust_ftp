@@ -1,0 +1,69 @@
+
+.button,
+.button:visited,
+button,
+input[type="submit"],
+input[type="file"],
+input[type="button"],
+.bt
+{
+    font: 16px/30px 'opensans-bold', sans-serif;
+    background-color: #11ABB0;
+    display: inline-block;
+    text-decoration: none;
+    letter-spacing: 0;
+    color: #fff;
+    padding: 12px 20px;
+    margin-bottom: 18px;
+    border: none;
+    cursor: pointer;
+    height: auto;
+
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px;
+}
+
+.button:hover,
+button:hover,
+.bt:hover,
+input[type="submit"]:hover,
+input[type="file"]:hover,
+input[type="button"]:hover {
+    background: #3d4145;
+    color: #fff;
+}
+
+.button:active,
+button:active,
+input[type="submit"]:active,
+input[type="file"]:active,
+input[type="button"]:active {
+    background: #3d4145;
+    color: #fff;
+}
+
+.button.full-width,
+button.full-width,
+input[type="submit"].full-width,
+input[type="file"].full-width,
+input[type="button"].full-width {
+    width: 100%;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    text-align: center;
+}
+
+/* Fix for odd Mozilla border & padding issues */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+

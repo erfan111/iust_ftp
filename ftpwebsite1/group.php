@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="css/media-queries.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
     <link rel="stylesheet" href="css/table.css">
+    <link rel="stylesheet" href="css/button.css">
     <!-- Script
     ================================================== -->
     <script src="js/modernizr.js"></script>
@@ -37,18 +38,15 @@
     <link rel="icon" href="favicon.png" type="image/x-icon">
     <!-- Load CSS -->
     <link href="style/style.css" rel="stylesheet" type="text/css" />
-    <!-- Load Fonts -->
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:regular,bold" type="text/css" />
     <!-- Load jQuery library -->
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-
+    <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="scripts/custom.js"></script>
     <!-- Load custom js -->
 
 </head>
 
 <body>
-<section id="about">
+<section id="suggestions">
 
     <div class="row">
 
@@ -63,8 +61,11 @@
                 global $mv;
 
                 $mv = new mysqli();
+                $mv0 = new mysqli();
                 $mv->connect($dbhost, $dbuser, $dbpass, $dbname);
+                $mv0->connect($dbhost, $dbuser, $dbpass, $dbname);
                 $mv->set_charset("utf8");
+                $mv0->set_charset("utf8");
                 //  Check Connection
                 if ($mv->connect_errno) {
                     printf("Connect failed: %s\n", $mv->connect_error);
@@ -76,20 +77,20 @@
                 
                 //scape sql injection
                 $catId = $mv->real_escape_string($catId);
-                
+                $query0 = "SELECT * from category WHERE id=".$_GET['cat'];
+                $qResult0 = $mv0->query($query0);
                 //select the category
-                $query = "SELECT * FROM catt WHERE id =".$catId ;
-                $result = $mv->query($query);
+                $the_name = $qResult0->fetch_array();
+
+                echo('<h2 class="title" >'.$the_name['name'].'</h2>');
+                ;
+                echo('<br>');
+
                 //Optimize this if block!!!###
-                if (!$result) {
-                    //echo "There is no cat with this id!!!";
-                    echo 'Could not run query: ' . mysql_error();
-                    exit;
-                }
-                $cat = $result->fetch_row();
+
                 echo "
-                    <!-- portfolio-wrapper -->
-                    <div id='portfolio-wrapper' class='bgrid-quarters s-bgrid-thirds cf'> 
+                    <!-- groups-wrapper -->
+                    <div id='groups-wrapper' class='bgrid-quarters s-bgrid-thirds cf'>
                     <!------------------------------------------------------------------>
                     ";
                 
@@ -108,14 +109,14 @@
                     $num = 0;
                     foreach ($result_array as $GLOBALS['result']) {
                         $num++;
-                        echo("<div class='columns portfolio-item'>");
+                        echo("<div class='columns groups-item'>");
                         echo('<div class="item-wrap">');
                         $format = '<a href="#modal-0'.$num.'">';
                         echo($format);
-                        $format =  '<img alt="" src="'.$result[img].'">'.'<div class="overlay">'.'<div class="portfolio-item-meta">';
+                        $format =  '<img alt="" src="'.$result['img'].'">'.'<div class="overlay">'.'<div class="groups-item-meta">';
                         echo($format);
-                        echo('<h5>'.$result[name].'</h5>');
-                        echo('<p>' . $result[desc].'</p>');
+                        echo('<h5>'.$result['name'].'</h5>');
+                        echo('<p>' . $result['desc'].'</p>');
                         echo('</div>');
                         echo('</div>');
                         echo('<div class="link-icon"><i class="icon-plus"></i></div>');
@@ -128,14 +129,13 @@
                 <!------------------------------------------------------------------>
 
 
-            </div> <!-- portfolio-wrapper end -->
+            </div> <!-- groups-wrapper end -->
 
         </div> <!-- twelve columns end -->
-    </div>
+<a class="bt" href="new_index.php" >بازگشت به صفحه اصلی</a>
+</section> <!-- suggestions Section End-->
 
-</section> <!-- About Section End-->
-
-<section id="portfolio">
+<section>
 
     <!-- Modal Popup
      --------------------------------------------------------------- -->
@@ -144,22 +144,62 @@
         $num = 0;
         foreach ($result_array as $result) {
             $num++;
-            echo('<div id="modal-0'.$num.'" class="popup-modal mfp-hide"');
-            $format =  '<img class="scale-with-grid" src="'.$result[img].'">'.'<div class="description-box">'.'<h4>'.$result[name].'</h4>'.'<p>'.$result[desc].'</p>';
+            echo('<div id="modal-0'.$num.'" class="popup-modal mfp-hide"'.'<br>');
+            $format =  '<img class="scale-with-grid" src="'.$result['img'].'">'.'<div class="description-box">'.'<h4>'.$result['name'].'</h4>'.'<p>'.$result['desc'].'</p>';
             echo($format);
             echo('</div>');
             echo('<div class="link-box">');
-            echo('<a href="'.$result[address].'دانلود</a>');
+            echo('<a class="dl" href="'.$result['address'].'">دانلود</a>');
             echo('<a class="popup-modal-dismiss">بستن</a>');
             echo('</div>');
             echo('</div>');
             echo('</div>');
-        }
     }
+        }
     ?>
 
-    </div> <!-- row End -->
 
-</section> <!-- Portfolio Section End-->
+
+</section> <!-- groups Section End-->
+
+<!-- footer
+================================================== -->
+<footer>
+
+    <div class="row">
+
+        <div class="twelve columns">
+
+            <ul class="social-links">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                <li><a href="#"><i class="fa fa-skype"></i></a></li>
+            </ul>
+
+            <ul class="copyright">
+                <li dir="rtl">طراحی و اجرا <br><a title="Styleshout" href="http://www.styleshout.com/">Styleshout</a> ||&nbsp;<a href="admin_login.php">دفتر فرهنگی دانشکده کامپیوتر</a></li>
+            </ul>
+
+        </div>
+
+        <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#home"><i class="icon-up-open"></i></a></div>
+
+    </div>
+
+</footer> <!-- Footer End-->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
+<script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+
+<script src="js/jquery.flexslider.js"></script>
+<script src="js/waypoints.js"></script>
+<script src="js/jquery.fittext.js"></script>
+<script src="js/magnific-popup.js"></script>
+<script src="js/init.js"></script>
 </body>
 </html>

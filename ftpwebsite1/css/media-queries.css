@@ -47,28 +47,28 @@
    }
 
 
-   /* About Section
+   /* suggestions Section
    ------------------------------------------------------------------- */
-   #about .profile-pic {
+   #suggestions .profile-pic {
       width: 114px;
       height: 114px;
       margin-left: 12px;
    }
-   #about .contact-details { width: 50%; }
-   #about .download { width: 50%; }
+   #suggestions .contact-details { width: 50%; }
+   #suggestions .download { width: 50%; }
 
    /* Resume Section
    ------------------------------------------------------------------- */
    #resume h1 { font: 16px/24px 'opensans-bold', sans-serif; }
    #resume .main-col { padding-right: 5%; }   
 
-   /* Testimonials Section
+   /* about_site Section
    ------------------------------------------------------------------- */
-   #testimonials .header-col h1:before {
+   #about_site .header-col h1:before {
       font-size: 66px;
       line-height: 66px;
    }
-   #testimonials blockquote p {
+   #about_site blockquote p {
       font-size: 22px;
       line-height: 46px;      
    }
@@ -213,15 +213,15 @@
    header .scrolldown { display: none; }
 
 
-   /* About Section
+   /* suggestions Section
    -------------------------------------------------------------------- */
-   #about .profile-pic { display: none; }
-   #about .download .button {
+   #suggestions .profile-pic { display: none; }
+   #suggestions .download .button {
       width: 100%;
       text-align: center;
       padding: 15px 20px;
    }
-   #about .main-col { padding-right: 30px; }
+   #suggestions .main-col { padding-right: 30px; }
 
 
    /* Resume Section
@@ -252,26 +252,26 @@
    #call-to-action p { font-size: 15px; }
 
 
-   /* Portfolio Section
+   /* groups Section
    /* ----------------------------------------------------------------- */
-   #portfolio-wrapper1 .columns { margin-bottom: 40px; }
-   #portfolio-wrapper .columns { margin-bottom: 40px; }
+   #groups-wrapper1 .columns { margin-bottom: 40px; }
+   #groups-wrapper .columns { margin-bottom: 40px; }
    .popup-modal {	max-width: 85%; }
 
 
-   /* Testimonials Section
+   /* about_site Section
    ----------------------------------------------------------------------- */
-   #testimonials .text-container { text-align: center; }
-   #testimonials h1 {
+   #about_site .text-container { text-align: center; }
+   #about_site h1 {
       font: 16px/24px 'opensans-bold', sans-serif;
       text-align: center;
       margin-bottom: 30px;
       text-shadow: 0px 1px 3px rgba(0, 0, 0, 1);
    }
-   #testimonials h1 span { display: block; }
-   #testimonials .header-col h1:before { content: none; }
-   #testimonials blockquote { padding-bottom: 24px; }
-   #testimonials blockquote p {
+   #about_site h1 span { display: block; }
+   #about_site .header-col h1:before { content: none; }
+   #about_site blockquote { padding-bottom: 24px; }
+   #about_site blockquote p {
       font-size: 20px;
       line-height: 42px;      
    }

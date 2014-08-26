@@ -19,6 +19,7 @@
     <!-- CSS
     ================================================== -->
     <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/button.css">
     <!-- Script
     ================================================== -->
 

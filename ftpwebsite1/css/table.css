@@ -19,12 +19,12 @@
     text-align: center;
 }
 .datagrid table td a {
-    color: rgb(240, 96, 0);
+    color: rgb(32, 32, 32);
     font-weight: bold;
 }
 
 .datagrid table td a:hover {
-    color: rgb(32, 32, 32);
+    color: rgb(245, 245, 245);
 }
 
 .datagrid table tbody td {
@@ -56,7 +56,16 @@
 .tbl {
     text-align: center
 }
+.tbl:hover {
+    background-color: #D72828;
+    transition: background-color .3s ease-in-out;
+    -moz-transition: background-color .3s ease-in-out;
+    -webkit-transition: background-color .3s ease-in-out;
+}
 .admin_login {
     margin-top: 15pt;
     margin-right: 15pt;
+}
+h2.title {
+    text-align: center;
 }

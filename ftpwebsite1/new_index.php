@@ -8,8 +8,8 @@
     ================================================== -->
     <meta charset="utf-8">
     <title>وبسایت دانلود ftp دانشگاه علم و صنعت ایران</title>
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="دانلود ftp">
+    <meta name="author" content="دفتر فرهنگی دانشکده کامپیوتر دانشگاه علم و صنعت">
 
     <!-- Mobile Specific Metas
     ================================================== -->
@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="css/media-queries.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
     <link rel="stylesheet" href="css/table.css">
+    <link href="style/style.css" rel="stylesheet" type="text/css" />
     <!-- Script
     ================================================== -->
     <script src="js/modernizr.js"></script>
@@ -35,12 +36,9 @@
     <!-- Meta -- for search -->
 
     <link rel="icon" href="favicon.png" type="image/x-icon">
-    <!-- Load CSS -->
-    <link href="style/style.css" rel="stylesheet" type="text/css" />
-    <!-- Load Fonts -->
 
     <!-- Load jQuery library -->
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="scripts/custom.js"></script>
     <!-- Load custom js -->
 
@@ -59,9 +57,9 @@
 
         <ul id="nav" class="nav">
             <li class="current"><a class="smoothscroll" href="#home" dir="rtl">جست و جو</a></li>
-            <li><a class="smoothscroll" href="#about">برنامه های پیشنهادی</a></li>
-            <li><a class="smoothscroll" href="#portfolio">گروه ها</a></li>
-            <li><a class="smoothscroll" href="#testimonials">درباره سایت</a></li>
+            <li><a class="smoothscroll" href="#suggestions">برنامه های پیشنهادی</a></li>
+            <li><a class="smoothscroll" href="#groups">گروه ها</a></li>
+            <li><a class="smoothscroll" href="#about_site">درباره سایت</a></li>
             <li><a class="smoothscroll" href="#contact">تماس با ما</a></li>
         </ul> <!-- end #nav -->
 
@@ -90,22 +88,22 @@
     </div>
 
     <p class="scrolldown">
-        <a class="smoothscroll" href="#about"><i class="icon-down-circle"></i></a>
+        <a class="smoothscroll" href="#suggestions"><i class="icon-down-circle"></i></a>
     </p>
 
 </header> <!-- Header End -->
 
 
-<!-- About Section
+<!-- suggestions Section
 ================================================== -->
-<section id="about">
+<section id="suggestions">
 
     <div class="row">
 
         <div class="twelve columns collapsed">
 
-            <!-- portfolio-wrapper -->
-            <div id="portfolio-wrapper" class="bgrid-quarters s-bgrid-thirds cf">
+            <!-- groups-wrapper -->
+            <div id="groups-wrapper" class="bgrid-quarters s-bgrid-thirds cf">
                 <!------------------------------------------------------------------>
                 <?php
                 $dbhost = "localhost";
@@ -139,11 +137,11 @@
                     $num = 0;
                     foreach ($result_array as $GLOBALS['result']) {
                         $num++;
-                        echo("<div class='columns portfolio-item'>");
+                        echo("<div class='columns groups-item'>");
                         echo('<div class="item-wrap">');
                         $format = '<a href="#modal-0'.$num.'">';
                         echo($format);
-                        $format =  '<img alt="" src="'.$result['img'].'">'.'<div class="overlay">'.'<div class="portfolio-item-meta">';
+                        $format =  '<img alt="" src="'.$result['img'].'">'.'<div class="overlay">'.'<div class="groups-item-meta">';
                         echo($format);
                         echo('<h5>'.$result['name'].'</h5>');
                         echo('<p>' . $result['desc'].'</p>');
@@ -159,16 +157,16 @@
                 <!------------------------------------------------------------------>
 
 
-            </div> <!-- portfolio-wrapper end -->
+            </div> <!-- groups-wrapper end -->
 
         </div> <!-- twelve columns end -->
     </div>
 
-</section> <!-- About Section End-->
+</section> <!-- suggestions Section End-->
 
-<!-- Portfolio Section
+<!-- groups Section
 ================================================== -->
-<section id="portfolio">
+<section id="groups">
 
     <div class="datagrid"><table>
 
@@ -205,11 +203,11 @@
 
 
 
-</section> <!-- Portfolio Section End-->
+</section> <!-- groups Section End-->
 
-<!-- Testimonials Section
+<!-- about_site Section
 ================================================== -->
-<section id="testimonials">
+<section id="about_site">
 
     <div class="text-container">
 
@@ -253,7 +251,7 @@
 
     </div>  <!-- text-container ends -->
 
-</section> <!-- Testimonials Section End-->
+</section> <!-- about_site Section End-->
 
 
 <!-- Contact Section
